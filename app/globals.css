@@ -17,11 +17,57 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #4caf50;
+  color: white;
+}
+
+.footer {
+  background-color: #4caf50;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.main-content {
+  padding: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+nav a {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #4caf50;
+}
+
+.logo {
+  width: 300px; 
+  height: auto; 
+  margin: 20 px; 
 }

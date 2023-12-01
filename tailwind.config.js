@@ -7,12 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        '128': '40rem',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    colors: {
+      main: '#3c7980',
+      secondary: '#525252',
+      white:'#ffffff',
+    }
   },
   plugins: [],
 }
