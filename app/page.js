@@ -16,21 +16,21 @@ const Home = () => {
       id: 1,
       title: 'WASCHEN & MANGELN',
       description: '',
-      price: '$10.00',
+      price: 'AB 3,50 €/KG',
       image: '/washer.png',
     },
     {
       id: 2,
       title: 'BÜGELSERVICE',
       description: '',
-      price: '$5.00',
+      price: 'AB 2.50 €/ST.',
       image: '/washer.png',
     },
     {
       id: 3,
       title: 'NÄHARBEITEN',
       description: '',
-      price: '$15.00',
+      price: 'AUF ANFRAGE',
       image: '/washer.png',
     },
   ];
@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div>
       <header className="bg-main text-white flex items-center p-4">
-        <img src="logo.svg" alt="Logo" className="logo mr-20" />
+        <img src="logo.svg" alt="Logo" className="logo mr-40" />
         <nav className="mt-4">
           <a className="text-3xl font-sans mr-20" href="#home">Home</a>
           <a className="text-3xl font-sans mr-20" href="#services">Leistungen</a>
@@ -51,7 +51,7 @@ const Home = () => {
       <main className="container mx-auto p-4">
         
         <section id="services" className="mb-8">
-          <h2 className="text-2xl font-bold font-sans mb-4">Leistungen</h2>
+          <h2 className=" text-center text-2xl font-bold font-sans mb-4">Leistungen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map(service => (
               <ServiceCard key={service.id} {...service} />
@@ -59,9 +59,13 @@ const Home = () => {
           </div>
         </section>
 
+        <section id="additional-section" className="mb-8">
+    <h2 className="text-center text-2xl font-bold font-sans mb-4">Unsere Extraleistungen</h2>
+  </section>
+
         <section id="extras" className="mb-8 flex items-center">
           <div className="w-1/2 pr-4">
-            <Image src="/images/left-image.jpg" alt="Left Image" width={600} height={400} className="rounded-md" />
+            <Image src="/scooter.png" alt="Left Image" width={600} height={400} className="rounded-md" />
           </div>
           <div className="w-1/2">
             <h2 className="text-2xl font-bold font-sans mb-4">Abhol - und Zustellservice</h2>
@@ -79,12 +83,14 @@ const Home = () => {
 • Unterhaltsreinigung • Grundreinigung • Treppenhausreinigung • Fensterreinigung • Büroreinigung • Praxisreinigung • Geschäftsreinigung • Grünpflege u.v.m.</p>
           </div>
           <div className="w-1/2 pl-4">
-            <Image src="/images/right-image.jpg" alt="Right Image" width={600} height={400} className="rounded-md" />
+            <Image src="/scooter.png" alt="Right Image" width={600} height={400} className="rounded-md" />
           </div>
         </section>
-        <section id="home" className="object-left mb-8">
-          <h2 className="text-2xl font-bold mb-4">Willkommen</h2>
-        </section>
+
+        <section id="additional-section" className="mb-8">
+    <h2 className="text-center text-2xl font-bold font-sans mb-4">Warum GREENTEX</h2>
+    {/* Ваши дополнительные разделы здесь */}
+  </section>
       </main>
 
       <footer className="bg-main text-white text-center relative">
