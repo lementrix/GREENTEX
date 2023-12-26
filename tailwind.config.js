@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        main: '#3c7980',
+        secondary: '#525252',
+        white:'#ffffff',
+      },
       height: {
         '128': '40rem',
       },
@@ -16,11 +22,6 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
-    colors: {
-      main: '#3c7980',
-      secondary: '#525252',
-      white:'#ffffff',
-    }
   },
   plugins: [],
 }
