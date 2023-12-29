@@ -1,19 +1,43 @@
+"use client"; // This is a client component
 import Link from 'next/link';
+import React, { useState } from 'react';
+
+const Home = () => {
+
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  const toggleMenuVisibility = () => {
+    setIsMenuVisible(!isMenuVisible);
+  };
 
 
-export default function Data () {
+
   return (
     <><div >
-      <header className="bg-main text-white flex items-center p-4">
-      <a href="/"><img src="logo.svg" alt="Logo" className="logo mr-40" /></a>
-        <nav className="mt-4">
-          <a className="text-3xl font-sans mr-20" href="/">Home</a>
-          <a className="text-3xl font-sans mr-20" href="/#services">Leistungen</a>
-          <a className="text-3xl font-sans mr-20" href="/#extras">Extras</a>
-          <a className="text-3xl font-sans mr-20" href="/#about">Über uns</a>
-          <a className="text-3xl font-sans mr-20" href="/#contact">Kontakt</a>
-        </nav>
-    
+      <header id="home" className="flex h-20 md:h-20 lg:h-20 bg-main text-white relative xl:h-32 2xl:h-32 ">
+      <link rel="icon" href="/favicon.ico" />
+      
+        <nav className=" md:flex bg-main items-center w-full z-20 fixed">
+        <a href="/" className="max-md:flex justify-center"><img src="logo.svg" alt="Logo" className="max-md:m-auto max-lg:mr-8 h-16 md:h-20 md:ml-2 xl:h-28 xl:w-72 ml-14 mr-28 "/>
+        </a>
+        <hamburger className= "block absolute right-2 top-1/2 -translate-y-1/2 w-4 h-3 bg-main z-40 mb-2 md:hidden " onClick={toggleMenuVisibility} >
+                <span className= {`block h-0.5 w-full bg-white z-40  mb-0.5 ${isMenuVisible ? '-rotate-45 translate-y-2': ''}`}></span>
+                <span className={`block h-0.5 w-full bg-white z-40  mb-0.5 ${isMenuVisible ? 'hidden': ''}`}></span>
+                <span className={`block h-0.5 w-full bg-white z-40  mb-0.5 ${isMenuVisible ? 'rotate-45 translate-y-1': ''}`}></span> 
+            </hamburger>
+        
+        <menu className={`max-md:fixed max-md:flex max-md:items-center place-content-center max-md:h-screen max-md:bg-main max-md:bg-opacity-70 max-md:w-1/2 max-md:flex-col ${isMenuVisible ? '' : 'max-md:left-full'}`}>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="/#home">Home</a>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="/#services">Leistungen</a>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="/#extras">Extras</a>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="/#about">Über uns</a>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="/#contact">Kontakt</a>
+          </menu>
+          
+          <div className="max-2xl:hidden 2xl:bg-main text-white w-50 ml-14"><a className="flex text-lg font-sans items-center place-content-between" href="tel:+49 (0) 176 419 77 994">+49 (0) 176 419 77 994</a>
+          <a className="flex text-lg font-sans" href="tel:+49 (0) 2602 992 9286">+49 (0) 2602 992 9286</a>
+          </div>
+          </nav>
       </header>
       <main className="container mx-auto p-4">
       <h1 className="text-5xl flex justify-center mb-20 font-style: italic">Datenschutzerklärung</h1>
@@ -123,6 +147,16 @@ export default function Data () {
   </footer>
   </div></>
   )};
+
+
+      
+      
+
+      
+     
+ 
+
+  export default Home;
       
       
 
