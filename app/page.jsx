@@ -54,24 +54,66 @@ const Home = () => {
   const services = [
     {
       id: 1,
-      title: 'WASCHEN & MANGELN',
+      title: 'Textilreinigung',
       description: '',
       price: 'AB 3,50 €/KG',
-      image: '/washer.png',
+      image: '/textil.png',
     },
     {
       id: 2,
-      title: 'BÜGELSERVICE',
+      title: 'Wäscheservice',
       description: '',
       price: 'AB 2.50 €/ST.',
-      image: '/iron.png',
+      image: '/washer.png',
     },
     {
       id: 3,
-      title: 'NÄHARBEITEN',
+      title: 'Mangelservice',
       description: '',
       price: 'AUF ANFRAGE',
-      image: '/sewing.png',
+      image: '/iron.png',
+    },
+    {
+      id: 4,
+      title: 'Hemdendienst',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/tshirt.png',
+    },
+    {
+      id: 5,
+      title: 'Schuhreinigung',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/shoes.png',
+    },
+    {
+      id: 6,
+      title: 'Änderung Schneiderei',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/atelier.png',
+    },
+    {
+      id: 7,
+      title: 'OZON Kabine',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/molecules.png',
+    },
+    {
+      id: 8,
+      title: 'Teppichreinigung Annahmestelle',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/carpet.png',
+    },
+    {
+      id: 9,
+      title: 'Lederreinigung Annahmestelle',
+      description: '',
+      price: 'AUF ANFRAGE',
+      image: '/leather.png',
     },
   ];
 
@@ -126,7 +168,7 @@ const Home = () => {
           </div>
           </nav>
       </header>
-<div className="bg-[url('/')]">
+<div className="bg-[url('/MainBG.jpg')]">
       <main className="container mx-auto p-4 ">
         
         <section id="services" className="mb-8">
