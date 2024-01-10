@@ -56,65 +56,68 @@ const Home = () => {
       id: 1,
       title: 'Textilreinigung',
       description: '',
-      price: 'AB 3,50 €/KG',
       image: '/textil.png',
     },
     {
       id: 2,
       title: 'Wäscheservice',
       description: '',
-      price: 'AB 2.50 €/ST.',
       image: '/washer.png',
     },
     {
       id: 3,
       title: 'Mangelservice',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/iron.png',
     },
     {
       id: 4,
       title: 'Hemdendienst',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/tshirt.png',
     },
     {
       id: 5,
       title: 'Schuhreinigung',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/shoes.png',
     },
     {
       id: 6,
       title: 'Änderung Schneiderei',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/atelier.png',
     },
     {
       id: 7,
       title: 'OZON Kabine',
       description: '',
-      price: 'AUF ANFRAGE',
-      image: '/molecules.png',
+      image: '/ozone.png',
     },
     {
       id: 8,
       title: 'Teppichreinigung Annahmestelle',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/carpet.png',
     },
     {
       id: 9,
       title: 'Lederreinigung Annahmestelle',
       description: '',
-      price: 'AUF ANFRAGE',
       image: '/leather.png',
     },
+  ];
+
+  const pricelist = [
+    { name: 'Textilreinigung', price: '1000' },
+    { name: 'Wäscheservice', price: '1500' },
+    { name: 'Mangelservice', price: '2000' },
+    { name: 'Hemdendienst', price: '2000' },
+    { name: 'Schuhreinigung', price: '2000' },
+    { name: 'Änderung Schneiderei', price: '2000' },
+    { name: 'OZON Kabine', price: '2000' },
+    { name: 'Teppichreinigung Annahmestelle', price: '2000' },
+    { name: 'Lederreinigung Annahmestelle', price: '2000' },
   ];
 
   const aboutCards = [
@@ -158,7 +161,7 @@ const Home = () => {
         <menu className={`max-md:fixed max-md:flex max-md:items-center place-content-center max-md:h-screen max-md:bg-main max-md:bg-opacity-70 max-md:w-1/2 max-md:flex-col ${isMenuVisible ? '' : 'max-md:left-full'}`}>
           <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#home">Home</a>
           <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#services">Leistungen</a>
-          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#extras">Extras</a>
+          <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#pricelist">Pricelist</a>
           <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#about">Über uns</a>
           <a className="max-md:mt-8 max-md:text-2xl md:text-xl lg:text-2xl max-lg:mr-8 xl:text-3xl font-sans mr-10" href="#contact">Kontakt</a>
           </menu>
@@ -168,7 +171,7 @@ const Home = () => {
           </div>
           </nav>
       </header>
-<div className="bg-[url('/MainBG.jpg')]">
+<div className="bg-[url('/MainBG.png')] bg-repeat">
       <main className="container mx-auto p-4 ">
         
         <section id="services" className="mb-8">
@@ -180,11 +183,36 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="additional-section" className="mb-8">
-    <h2 className="text-center text-main font-bold font-sans text-4xl mb-4">Unsere Extraleistungen</h2>
+        <section id="pricelist" className="mb-8">
+    <h2 className="text-center text-main font-bold font-sans text-4xl mb-4">Preisliste</h2>
   </section>
-
-        <section id="extras" className="mb-8 flex items-center">
+  <div className="flex justify-center">
+  <table className="w-1/2 border-collapse border border-main mb-10">
+        <thead>
+          <tr className="bg-main">
+            <th className="border border-main text-white p-2">Услуга</th>
+            <th className="border border-main text-white p-2">Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pricelist.map((pricelist, index) => (
+            <tr key={index}>
+              <td className="border text-main border-main p-2">{pricelist.name}</td>
+              <td className="border text-main border-main p-2">{pricelist.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+        
+        <section id="about" className="mb-8 pb-8">
+            <h2 className="text-center text-main text-2xl font-bold font-sans mb-4">Warum GREENTEX</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {aboutCards.map(card => (
+                <AboutCard key={card.id} {...card} />
+              ))}
+            </div>
+            <section className="mb-8 flex items-center">
           <div className="w-1/2 pr-4">
             <Image src="/scooter.png" alt="Left Image" width={600} height={400} className="rounded-md" />
           </div>
@@ -195,26 +223,6 @@ const Home = () => {
               In allen anderen Fällen werden für den Lieferservice 3 Euro berechnet.</p>
           </div>
         </section>
-        <section id="more-extras" className="mb-8 flex items-center">
-          <div className="w-1/2">
-            <h2 className=" text-main font-bold font-sans text-4xl mb-4">Reinigungsdienste</h2>
-            <p className="font-sans">Sie legen Wert auf eine kristallreine Sauberkeit und Ordnung? Dann sind Sie bei uns genau richtig! 
-              Mit unserem Team können Sie sicher sein, dass Ihre Gebäude immer in einem ordentlichen und sauberen Zustand von Ihnen genutzt werden können. 
-              Gründliches Arbeiten, faire Preise und Pünktlichkeit sind unsere Devise.
-• Unterhaltsreinigung • Grundreinigung • Treppenhausreinigung • Fensterreinigung • Büroreinigung • Praxisreinigung • Geschäftsreinigung • Grünpflege u.v.m.</p>
-          </div>
-          <div className="w-1/2 pl-4">
-            <Image src="/cleaning.png" alt="Right Image" width={600} height={400} className="rounded-md" />
-          </div>
-        </section>
-
-        <section id="about" className="mb-8 pb-8">
-            <h2 className="text-center text-main text-2xl font-bold font-sans mb-4">Warum GREENTEX</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {aboutCards.map(card => (
-                <AboutCard key={card.id} {...card} />
-              ))}
-            </div>
           </section>
     
 
