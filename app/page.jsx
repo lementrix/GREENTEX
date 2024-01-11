@@ -78,7 +78,7 @@ const Home = () => {
     },
     {
       id: 5,
-      title: 'Schuhreinigung',
+      title: 'Schuhreparatur Annahmestelle',
       description: '',
       image: '/shoes.png',
     },
@@ -86,7 +86,7 @@ const Home = () => {
       id: 6,
       title: 'Änderung Schneiderei',
       description: '',
-      image: '/atelier.png',
+      image: '/sewing.png',
     },
     {
       id: 7,
@@ -113,7 +113,7 @@ const Home = () => {
     { name: 'Wäscheservice', price: '1500' },
     { name: 'Mangelservice', price: '2000' },
     { name: 'Hemdendienst', price: '2000' },
-    { name: 'Schuhreinigung', price: '2000' },
+    { name: 'Schuhreparatur Annahmestelle', price: '2000' },
     { name: 'Änderung Schneiderei', price: '2000' },
     { name: 'OZON Kabine', price: '2000' },
     { name: 'Teppichreinigung Annahmestelle', price: '2000' },
@@ -214,13 +214,11 @@ const Home = () => {
             </div>
             <section className="mb-8 flex items-center">
           <div className="w-1/2 pr-4">
-            <Image src="/scooter.png" alt="Left Image" width={600} height={400} className="rounded-md" />
+            <Image src="/delivery.png" alt="Left Image" width={600} height={400} className="rounded-md" />
           </div>
           <div className="w-1/2">
             <h2 className=" text-main font-bold font-sans text-4xl mb-4">Abhol - und Zustellservice</h2>
-            <p className="font-sans">Wir holen Ihre Textilien ab und bringen Sie nach der Reinigung wieder zurück. Im Umkreis von 5 km um Montabaur erfolgt das Abholen und Zustellen kostenlos. 
-              Die Lieferung im Umkreis 5 km bis 15 km erfolgt bei einer Bestellung ab 30 Euro ebenfalls kostenlos. 
-              In allen anderen Fällen werden für den Lieferservice 3 Euro berechnet.</p>
+            <p className="font-sans">In allen anderen Fällen wird der Lieferpreis nach Vereinbarung festgelegt.</p>
           </div>
         </section>
           </section>
