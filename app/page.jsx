@@ -190,8 +190,8 @@ const Home = () => {
   <table className="w-1/2 border-collapse border border-main mb-10">
         <thead>
           <tr className="bg-main">
-            <th className="border border-main text-white p-2">Услуга</th>
-            <th className="border border-main text-white p-2">Цена</th>
+            <th className="border border-main text-white p-2">Service</th>
+            <th className="border border-main text-white p-2">Preis</th>
           </tr>
         </thead>
         <tbody>
