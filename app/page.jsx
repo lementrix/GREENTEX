@@ -1,9 +1,7 @@
 "use client"; // This is a client component
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import Link from 'next/link';
-
-
 
 
 const ServiceCard = ({ title, description, price, image }) => (
@@ -44,7 +42,21 @@ const AboutCard = ({ title, initialText, hoverText, icon }) => {
 
 
 const Home = () => {
+  const [data, setData] = useState(null);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://wordpress/wp-json/wp/v2/posts');
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data from WordPress:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenuVisibility = () => {
@@ -182,6 +194,11 @@ const Home = () => {
             ))}
           </div>
         </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {data?.map(post => (
+    <ServiceCard key={post.id} title={post.title.rendered} description={post.excerpt.rendered} image={post.featured_media.source_url} />
+  ))}
+</div>
 
         <section id="pricelist" className="mb-8">
     <h2 className="text-center text-main font-bold font-sans text-4xl mb-4">Preisliste</h2>
@@ -259,7 +276,8 @@ const Home = () => {
 
 
 
-
 export default Home;
+
+
 
 
