@@ -235,7 +235,7 @@ const Home = () => {
           </div>
           <div className="w-1/2">
             <h2 className=" text-main font-bold font-sans text-4xl mb-4">Abhol - und Zustellservice</h2>
-            <p className="font-sans">In allen anderen Fällen wird der Lieferpreis nach Vereinbarung festgelegt.</p>
+            <p className="font-sans">Wir holen Ihre Textilien ab und bringen Sie nach der Reinigung wieder zurück. Im Umkreis von 5 km um Montabaur erfolgt das Abholen und Zustellen kostenlos.In allen anderen Fällen wird der Lieferpreis nach Vereinbarung festgelegt.</p>
           </div>
         </section>
           </section>
